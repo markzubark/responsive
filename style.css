@@ -29,6 +29,7 @@ body {
     height: 100vh;
     background-color: black;
     position: absolute;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
 }
 
 .fullpage {
