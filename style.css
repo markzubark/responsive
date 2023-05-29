@@ -1,0 +1,1055 @@
+:root {
+    --primary-color: white;
+    --secondary-color: black;
+    --main-color: rgb(12, 210, 221);
+    --extra-color: rgb(236, 247, 248);
+    --box-shadow: rgb(129, 128, 128);
+    --blur-color: rgb(231, 231, 231);
+    --blur-color-bkblack: rgb(92, 92, 92);
+    --color-one: rgb(248, 215, 136);
+    --transparent-white: rgba(255, 255, 255, 0.56);
+    --advance-color: rgb(11, 191, 188);
+}
+
+.dark-mode {
+    --primary-color: black;
+    --secondary-color: white;
+    --blur-color: var(--blur-color-bkblack);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+}
+
+.fullpage {
+    height: min(180vh);
+    width: min(100%);
+    background: var(--main-color);
+    margin-inline: auto;
+}
+
+
+/* Overlay Here */
+
+#overlayer {
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* This is an Animated loader  */
+
+
+#overlayer .fullpage{
+    height: 50vh;
+    width: 355px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transform: rotate();
+    border-radius: 20px;
+    transition: 1s ease-in-out;
+	box-shadow: 2px 2px 15px rgb(48, 48, 48);
+}
+#overlayer .fullpage:hover{
+    height: 60vh;
+    width: 500px;
+}
+#overlayer .third{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    border: 5px solid transparent;
+}
+#overlayer .second{
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    border: 5px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#overlayer .first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    width: 110px;
+    position: fixed;
+    border: 5px solid transparent;
+    transform: rotate(45deg);
+
+}
+
+#overlayer .welcome{
+    color: white;
+    position: absolute;
+    bottom: 30%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 030px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(45deg, var(--main-color), var(--primary-color), var(--main-color));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+@media screen and (max-width: 520px) {
+    #overlayer .welcome{
+        font-size: 20px;
+    }
+}
+#overlayer .welcome::before{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width:10px;
+    background-color: transparent;
+    border: 5px solid red;
+    border-top: 0;
+    border-left: 0;
+    z-index: -1;
+    left: 5px;
+    margin-top: -15px;
+
+    transform: rotate(45deg);
+}
+
+/* This is a loader if Needed , please comment out */
+
+
+/* #overlayer .loader{
+    position: absolute;
+    height: 20px;
+    width: 80%;
+    background-color: rgb(0, 0, 0);
+    margin-top: 220px;
+    margin-left: 20px;
+    display: flex;
+    border: 3px solid var(--primary-color);
+    animation:  2s linear infinite;
+    bottom: 20%;
+    border-radius: 20px;
+    overflow: hidden;
+    
+}
+#overlayer .loader p{
+    z-index: 999;
+    position: absolute;
+    left: 50%;
+    color: white;
+    transform: translate(0%, -50%);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+#overlayer .loader .preloader{
+    width: 0%;
+    background-color: var(--main-color);
+    height: 19px;
+    animation: loader 7.5s linear;
+}
+@keyframes loader {
+    0%{
+        width: 10%;
+    }
+    20%{
+        width: 20%;
+    }
+    40%{
+        width: 40%;
+    }
+    60%{
+        width: 60%;
+    }
+    80%{
+        width: 80%;
+    }
+    100%{
+        width: 100%;
+    }
+} */
+
+.nav {
+    width: 100%;
+    height: min(50%);
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),url(/vibrations.jpg);
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+
+    z-index: 1;
+}
+
+.nav .logo{
+    height: 150px;
+    width: 200px;;
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    padding-top: -200px;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+}
+.nav .logo .li{
+    transform: rotate(-45deg);
+}
+.nav .logo .one{
+    height: 40px;
+    width: 15px;
+    background-color: red;
+    border-radius: 40px;
+    margin-top: 60px;
+    margin-right: 0px;
+
+}
+.nav .logo .two{
+    height: 60px;
+    width: 15px;
+    background-color: var(--main-color);
+    border-radius: 50px;
+    margin-top: 40px;
+}
+
+.nav .logo .four{
+    position: absolute;
+    margin-top: 120px;
+    color: white;
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100px;
+    text-align: center;
+    margin-left: 20px;
+    font-style: italic;
+}
+.nav .logo span{
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.mode-switcher {
+    z-index: 4;
+    position: fixed;
+    font-size: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    background: transparent;
+    color: var(--advance-color);
+    box-shadow: 1px 1px solid black;
+    padding-bottom: 5px;
+    width: 80px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+
+}
+
+.mode-switcher p {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.sidebar-btn {
+    position: fixed;
+    z-index: 3;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+.sidebar-btn i {
+    font-size: 50px;
+    color: var(--advance-color);
+    transition: .5s ease-in-out;
+
+}
+
+.sidebar-btn i:hover {
+    font-size: 60px;
+}
+
+.sign-in-box {
+    z-index: 4;
+    width: 120px;
+    height: 25px;
+    background: var(--primary-color);
+    position: fixed;
+    display: flex;
+    right: 10px;
+    justify-content: center;
+    top: 5px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid var(--box-shadow);
+
+}
+
+.sign-in-box button {
+    color: var(--secondary-color);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 12px;
+    width: min(95%, 200px);
+    background: transparent;
+    border-radius: 20px;
+    border: .5px solid var(--box-shadow);
+    margin: 3px;
+    cursor: pointer;
+    transition: 3s ease-in;
+
+}
+
+.sign-in-box button:hover {
+    background: linear-gradient(-45deg, orange 50%, aqua 50%);
+    color: black;
+}
+
+@media screen and (max-width: 650px) {
+    .sign-in-box button {
+        font-size: 2.5vmin;
+    }
+}
+
+
+
+.body-box {
+    height: 115vh;
+    max-height: 150vh;
+    overflow: hidden;
+    border: 1px solid var(--blur-color);
+    width: min(99.8%);
+    position: absolute;
+    background: var(--primary-color);
+    border-radius: 30px;
+    z-index: 1;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%);
+    transition: .5s ease-in-out;
+
+}
+
+.body-box .button-nav {
+    height: 300px;
+    width: 90%;
+    background: var(--main-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* Register List Menu */
+
+
+#register-menu {
+    display: none;
+}
+
+.register-menu {
+    z-index: 3;
+    height: min(30%, 70rem);
+    width: min(50px);
+    position: fixed;
+    top: 20%;
+    right: 72px;
+    background: var(--primary-color);
+    transform: translate(0%, -50%);
+    margin-left: 5px;
+    border-radius: 40px;
+    display: grid;
+    transition: background-color 01s ease;
+    animation: mvoutfromtop .2s linear;
+
+}
+
+@keyframes mvoutfromtop {
+    0% {
+        top: 0%;
+    }
+
+    50% {
+        top: 13%;
+    }
+
+    100% {
+        top: 20%;
+    }
+}
+
+.register-menu ul {
+    list-style: none;
+    margin-top: 5px;
+    position: absolute;
+    height: 100%;
+    max-height: calc(96% - 2px);
+    border-radius: 20px;
+    display: grid;
+    left: 50%;
+    transform: translate(-50%);
+    border: 1px solid var(--blur-color);
+}
+
+.register-menu li {
+    background: transparent;
+    position: relative;
+    text-align: center;
+    max-height: calc(100% - 2px);
+    border-radius: 15px;
+    border: .5px solid var(--blur-color);
+    width: 40px;
+    background-color: transparent;
+}
+.register-menu li:nth-child(1) i,
+.register-menu li:nth-child(3) i,
+.register-menu li:nth-child(5) i,
+.register-menu li:nth-child(7) i{
+    color: var(--secondary-color);
+
+}
+.register-menu a {
+    font-size: 25px;
+    color: var(--box-shadow);
+    text-decoration: none;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    width: 100%;
+
+}
+
+.register-menu hr {
+    border: none;
+}
+
+.register-menu li:nth-child(1) p,
+.register-menu li:nth-child(3) p,
+.register-menu li:nth-child(5) p,
+.register-menu li:nth-child(7) p {
+    font-size: 9px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: lighter;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--secondary-color);
+
+}
+
+/* Login Form Menu */
+
+
+#form-box {
+    display: none;
+}
+
+.form-box {
+    z-index: 2;
+    width: 380px;
+    height: 550px;
+    position: fixed;
+    border-radius: 15px;
+    background: var(--primary-color);
+    padding: 49px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    animation: moveOutFromBottom 1s linear;
+    border: .2px solid var(--box-shadow);
+}
+
+@media screen and (max-width: 520px) {
+    .form-box {
+        width: 300px;
+        height: 500px;
+        padding: 30px;
+    }
+}
+
+@keyframes moveOutFromBottom {
+    0% {
+        top: 200%;
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    100% {
+        bottom: 50%;
+    }
+}
+
+.form-box::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -3;
+    background: var(--primary-color);
+    border-radius: 12px;
+    filter: blur(20px);
+}
+
+
+
+.form-box .button-box {
+    width: 220px;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 30px;
+    background-color: transparent;
+    border-bottom: 1px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 520px) {
+    .form-box .button-box {
+        width: 200px;
+        margin-top: 0px;
+    }
+}
+
+.form-box .toggle-btn {
+    padding: 6px 28px;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    outline: none;
+    position: relative;
+    color: var(--secondary-color);
+    background-color: transparent;
+    font-family: 'Arial';
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.form-box .input-group-login {
+    top: 150px;
+    position: absolute;
+    width: 280px;
+    transition: .5s ease;
+    background-color: transparent;
+    height: 100%;
+    overflow: hidden;
+}
+
+.form-box .input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 15px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    outline: none;
+    border-color: var(--box-shadow);
+    background: var(--primary-color);
+    color: var(--secondary-color) !important;
+}
+
+@media screen and (max-width: 520px) {
+    .form-box .input-group-login {
+        top: 100px;
+        width: 80%;
+    }
+}
+
+.form-box input[type="text"]:focus::placeholder,
+.form-box input[type="password"]:focus::placeholder {
+    color: transparent;
+}
+
+.form-box input:nth-child(2),
+.form-box input:nth-child(4) {
+    position: relative;
+    z-index: 2;
+}
+
+.form-box #loginEmailPlaceholder, .form-box #loginPasswordPlaceholder {
+    position: absolute;
+    z-index: 1;
+    margin-top: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: transparent;
+    color: var(--secondary-color);
+    width: 150px;
+}
+
+.form-box .input-field:hover {
+    border-color: var(--main-color);
+}
+
+.form-box .submit-btn {
+    z-index: 2;
+    position: absolute;
+    width: 60%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    background: var(--main-color);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    color: rgb(6, 5, 5);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: .5s linear;
+    right: 50%;
+    transform: translate(50%, -10%);
+}
+.form-box .submit-btn:hover {
+    background-color: var(--primary-color);
+    border: 2px solid var(--main-color);
+    color: var(--secondary-color);
+}
+
+.form-box .check-box {
+    margin: 30px 10px 34px 0;
+}
+
+.form-box #login span {
+    display: inline;
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.form-box .forgot-pass-btn {
+    background-color: transparent;
+    position: absolute;
+    width: 120px;
+    margin-left: -50px;
+    margin-top: 60px;
+    border: none;
+}
+
+@media screen and (max-width: 520px) {
+    .form-box .forgot-pass-btn {
+        margin-left: -70px;
+    }
+}
+
+.form-box .forgot-pass-link {
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 11px;
+
+}
+
+.form-box .block {
+    height: 150px;
+    position: absolute;
+    width: 100%;
+    background: var(--main-color);
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.form-box .block::before {
+    z-index: 1;
+    content: '';
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    background: var(--primary-color);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+/* Register Form Menu  */
+
+#register-form-box {
+    display: none;
+}
+.register-form-box {
+    z-index: 2;
+    width: 380px;
+    height: 550px;
+    position: fixed;
+    border-radius: 15px;
+    background: var(--primary-color);
+    padding: 49px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    animation: moveOutFromBottom 1s linear;
+    border: .2px solid var(--box-shadow);
+}
+
+
+@media screen and (max-width: 520px) {
+    .register-form-box {
+        width: 300px;
+        height: 500px;
+        padding: 30px;
+    }
+}
+
+@keyframes moveOutFromBottom {
+    0% {
+        top: 200%;
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    100% {
+        bottom: 50%;
+    }
+}
+
+.register-form-box::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -3;
+    background: var(--primary-color);
+    border-radius: 12px;
+    filter: blur(20px);
+}
+
+
+
+.register-form-box .button-box {
+    width: 220px;
+    margin: 5px auto;
+    position: relative;
+    border-radius: 30px;
+    background-color: transparent;
+    border-bottom: 1px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 520px) {
+    .register-form-box .button-box {
+        width: 200px;
+        margin-top: 10px;
+    }
+}
+
+.register-form-box .toggle-btn {
+    padding: 6px 28px;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    outline: none;
+    position: relative;
+    color: var(--secondary-color);
+    background-color: transparent;
+    font-family: 'Arial';
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-top: -29px;
+}
+
+.register-form-box .input-group-register {
+    top: 100px;
+    position: absolute;
+    width: 280px;
+    transition: .5s ease;
+    background-color: transparent;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 7px;
+}
+
+.register-form-box .input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    outline: none;
+    border-color: var(--box-shadow);
+    background: var(--primary-color);
+    color: var(--secondary-color) !important;
+}
+
+@media screen and (max-width: 520px) {
+    .register-form-box .input-group-register {
+        top: 60px;
+        width: 80%;
+    }
+}
+
+.register-form-box input[type="text"]:focus::placeholder,
+.register-form-box input[type="password"]:focus::placeholder,
+.register-form-box input[type="email"]:focus::placeholder{
+    color: transparent;
+}
+
+.register-form-box input:nth-child(2),
+.register-form-box input:nth-child(4),
+.register-form-box input:nth-child(6),
+.register-form-box input:nth-child(8),
+.register-form-box input:nth-child(10) {
+    position: relative;
+    z-index: 2;
+}
+
+.register-form-box .placeholder {
+    position: absolute;
+    z-index: 1;
+    margin-top: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: transparent;
+    color: var(--secondary-color);
+    width: 150px;
+}
+.register-form-box .input-field:hover {
+    border-color: var(--main-color);
+}
+
+.register-form-box .submit-btn {
+    z-index: 2;
+    position: absolute;
+    width: 60%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    background: var(--main-color);
+    border: 1px solid var(--box-shadow);
+    outline: none;
+    border-radius: 30px;
+    margin-top: 15px;
+    color: rgb(6, 5, 5);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: .2s linear;
+    right: 50%;
+    transform: translate(50%, -10%);
+}
+
+.register-form-box .submit-btn:hover{
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.register-form-box .check-box {
+    margin: 30px 10px 34px 0;
+}
+
+.register-form-box #register span {
+    display: inline;
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 5px;
+    margin-top: 5px;
+    position: absolute;
+}
+
+.register-form-box .forgot-pass-btn {
+    background-color: transparent;
+    position: absolute;
+    top: 97%;
+    border: none;
+    right: 50%;
+    transform: translate(50%, -0%);
+}
+
+.register-form-box .forgot-pass-link {
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 11px;
+
+}
+
+.register-form-box .block {
+    height: 100px;
+    position: absolute;
+    width: 100%;
+    background: var(--main-color);
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.register-form-box .block::before {
+    z-index: 1;
+    content: '';
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    background: var(--primary-color);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+
+#link-menu {
+    display: none;
+    background: var(--primary-color);
+}
+
+.menu {
+    z-index: 999;
+    height: min(55%, 70rem);
+    width: min(50px);
+    position: fixed;
+    top: 50%;
+    transform: translate(0%, -50%);
+    border-radius: 40px;
+    display: grid;
+    left: 5px;
+    transition: background-color 01s ease;
+}
+
+@keyframes moveOutFromLeft {
+    0% {
+        left: -200px;
+    }
+
+    40% {
+        left: -40px;
+    }
+
+    70% {
+        left: -5%;
+    }
+
+    100% {
+        left: 5px;
+        position: absolute;
+    }
+}
+
+.menu ul {
+    list-style: none;
+    margin-top: 5px;
+    position: absolute;
+    height: 100%;
+    max-height: calc(98% - 2px);
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    background-color: transparent;
+    left: 50%;
+    transform: translate(-50%);
+    border: 1px solid var(--blur-color);
+}
+
+.menu li {
+    background: transparent;
+    position: relative;
+    text-align: center;
+    height: min(100%, 100px);
+    border-radius: 10px;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    border: .5px solid var(--blur-color);
+}
+
+.menu li:nth-child(1),
+.menu li:nth-child(3),
+.menu li:nth-child(5),
+.menu li:nth-child(7),
+.menu li:nth-child(9) {
+    transition: 1s ease-in-out;
+}
+
+.menu li:nth-child(1) i,
+.menu li:nth-child(3) i,
+.menu li:nth-child(5) i,
+.menu li:nth-child(7) i,
+.menu li:nth-child(9) i {
+    margin-top: 10px;
+    height: 50px;
+    width: 40px;
+    transition: 1s ease-in-out;
+    color: var(--secondary-color);
+    opacity: .9;
+}
+
+.menu li:nth-child(1) p,
+.menu li:nth-child(5) p,
+.menu li:nth-child(7) p,
+.menu li:nth-child(3) p,
+.menu li:nth-child(9) p {
+    position: absolute;
+    transition: .5s ease-in-out;
+    color: var(--secondary-color);
+    opacity: .8;
+    margin-top: 10px;
+    left: 20%;
+    transform: translate(0%, -20%);
+}
+.menu li:nth-child(3) p, .menu li:nth-child(7) p {
+    position: absolute;
+    margin-left: -5px;
+    
+}
+
+.menu a {
+    font-size: 25px;
+    color: var(--box-shadow);
+    text-decoration: none;
+    background-color: transparent;
+    padding-bottom: 5px;
+    width: 100%;
+
+}
+
+.menu hr {
+    border: none;
+}
+
+.menu p {
+    font-size: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--primary-color);
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="fullpage">
+        <div id="overlayer">
+            <div class="first">
+                <div class="second">
+                    <div class="third"></div>
+                </div>
+            </div>
+            <div class="welcome"><p>WELCOME&nbsp;</p><p>TO MY&nbsp;</p><p>WEBSITE</p></div>
+            <!-- <div class="loader">
+                <p>Loading...</p>
+                <div class="preloader"></div>
+            </div> -->
+        </div>
+        <div class="nav">
+            <div class="logo">
+                <div class="for li"></div>
+                <div class="one li"></div>
+                <div class="two li"></div>
+                <div class="three li"></div>
+                <div class="four"> <span>M</span>imi.web</div>
+            </div>
+        </div>
+        <div class="mode-switcher">
+            <i class="bx bx-moon toogle-icon"></i>
+            <p>Switch Mode</p>
+        </div>
+        <button class="sidebar-btn" onclick="getSideBarMenu()">
+            <i class='bx bx-menu'></i>
+        </button>
+        <div class="sign-in-box">
+            <button onclick="getRegisterMenu()">Register</button>
+            <button id="loginFormButton" onclick="getLoginForm()">Login</button>
+        </div>
+
+        <div id="register-menu" class="register-menu">
+            <ul>
+                <li>
+                    <a href="#" class="reg-link">
+                        <i class='bx bxl-facebook'>
+                            <p>Facebook</p>
+                        </i>
+                    </a>
+                </li>
+                <hr>
+                <li>
+                     <a href="#" class="reg-link">
+                        <i class='bx bxl-twitter'>
+                            <p>Twitter</p>
+                        </i>
+                    </a>
+                </li>
+                <hr>
+                <li> 
+                    <a href="#" class="reg-link">
+                        <i class='bx bxl-instagram'>
+                            <p>Intagram</p>
+                        </i>
+                    </a>
+                </li>
+                <hr>
+                <li id="register-button" onclick="getRegisterForm()"> 
+                    <a href="#">
+                        <i class='bx bxl-gmail'></i>
+                            <p>Email</p>
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id='login-form'class='login-page'>
+            <div class="form-box" id="form-box">
+                <div class='button-box'>
+                    <button type='button'onclick='login()'class='toggle-btn'>LOGIN</button>
+                </div>
+                <form id='login' class='input-group-login'>
+                    <div id="loginEmailPlaceholder">Enter Email</div>
+                    <input type='text'id="userEmail"class='input-field' placeholder="Enter Email" required >
+                    <div id="loginPasswordPlaceholder">Enter Password</div>
+                    <input type='password'class='input-field' placeholder="Enter Password" id="userPassword" required>
+                    <input type='checkbox'class='check-box'><span>Remember Password</span>
+                    <button type='submit'class='submit-btn'>Log in</button>
+                    <button class="forgot-pass-btn"><a href="#" class="forgot-pass-link">Forgot Password ?</a></button>
+                    
+                </form>
+                <div class="block"></div>
+            </div>
+            <div class="register-form-box" id="register-form-box">
+                <div class='button-box'>
+                    <button type='button'onclick='login()'class='toggle-btn'>REGISTER</button>
+                </div>
+                <form id='register' class='input-group-register'>
+                    <div class="placeholder" id="firstNamePlaceholder">Enter First Name</div>
+                    <input type='text'class='input-field firstName'placeholder='First Name' required>
+                    <div class="placeholder" id="lastNamePlaceholder">Enter Last Name</div>
+                    <input type='text'class='input-field lastName'placeholder='Last Name' required>
+                    <div class="placeholder" id="emailPlaceholder">Enter Your Email </div>
+                    <input type='email'class='input-field email'placeholder='Email Id' required>
+                    <div class="placeholder" id="passwordPlaceholder">Enter Password</div>
+                    <input type='password'class='input-field password'placeholder='Enter Password' required>
+                    <div class="placeholder" id="confirmPasswordPlaceholder">Confirm Password</div>
+                    <input type='password'class='input-field confirmPassword'placeholder='Confirm Password'  required>
+                    <input type='checkbox'class='check-bos'><span class="agree">I agree to the terms and conditions ?</span>
+                    <button type='submit'class='submit-btn subbtn'>Register</button>
+                </form>
+                <div class="block"></div>
+            </div>
+        </div>
+        <div id="link-menu" class="menu">
+            <ul>
+                <li class="link">
+                    <a href="#" class="home-link">
+                        <i class='bx bx-home'>
+                            <p>Home</p>
+                        </i>
+                    </a>
+                </li>
+                <hr>
+                <li class="link">
+                    <a href="#" class="service-link">
+                        <i class='bx bx-wifi'>
+                            <p>Services</p>
+                        </i>
+                    </a>
+                </li>
+                <hr>
+                <li class="link">
+                    <a href="#" class="about-link">
+                        <i class='bx bxs-contact'>
+                            <p>About</p>
+                        </i>
+                    </a>
+                </li>
+                <hr>
+                <li class="link">
+                    <a href="#" class="contact-link">
+                        <i class='bx bx-phone-call'>
+                            <p>Contact Us</p>
+                        </i>
+                    </a>
+                </li>
+                <hr>
+                <li class="link">
+                    <a href="#" class="user-link" onclick="getLoginForm()">
+                        <i class='bx bx-user'>
+                            <p>Login</p>
+                        </i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="body-box">
+
+        </div>
+
+    </div>
+    <script>
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
