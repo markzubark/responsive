@@ -191,7 +191,7 @@ function getSideBarMenu() {
             $("#link-menu").hide(700);
             clearInterval(intervalId);
         }
-    }, 50000);
+    }, 5000);
 
     $("#link-menu").on("mouseover", function () {
         mouseOverMenu = true;
